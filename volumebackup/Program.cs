@@ -21,12 +21,12 @@ namespace Oracle.Oci
     {
         public static void Main(string[] args)
         {
-            var tenancyId = "";
-            var compartmentId = "";
-            var userId = "";
-            var fingerprint = "";
+            var tenancyId = "ocid1.tenancy.oc1..aaaaaaaa33zmzods56kapqxipjath2cq5naumm23vvevui7jpznyxkjctmya";
+            var compartmentId = "ocid1.compartment.oc1..aaaaaaaa4nuufjh2u2wsevzxizto3odfsoxpzrekxib466h6z5zij37xvgwq";
+            var userId = "ocid1.user.oc1..aaaaaaaaqfsq7l4htnwbl4zaoqymrpzx2qfmbvqezakxgjnlm5egb4lm7cfa";
+            var fingerprint = "d4:00:9c:89:cf:37:1f:0c:08:f8:d3:18:5e:f6:db:91";
             var privateKeyPath = @"C:\oci\keys\oci_api_key.pem";
-            var privateKeyPassphrase = "";
+            var privateKeyPassphrase = "acapulco";
             var torontoAD = "dKyb:CA-TORONTO-1-AD-1";
             var dest = "ca-montreal-1";
             var signer = new RequestSigner(tenancyId, userId, fingerprint, privateKeyPath, privateKeyPassphrase);
@@ -90,33 +90,6 @@ namespace Oracle.Oci
 
                 }            
             }
-
-
-
-            // Get list of backup for all volumes
-
-
-            // POST with body (creates a bucket)
-            // uri = new Uri($"https://objectstorage.us-phoenix-1.oraclecloud.com/n/{namespaceName}/b/" );
-            // body = string.Format(@"{{""name"" : ""bucket01"",""compartmentId"" : ""{0}"",""publicAccessType"" : ""ObjectRead""}}", compartmentId);
-            // bytes = Encoding.UTF8.GetBytes(body);
-
-            // request = (HttpWebRequest)WebRequest.Create(uri);
-            // request.Method = "POST";
-            // request.Accept = "application/json";
-            // request.ContentType = "application/json";
-            // request.Headers["x-content-sha256"] = Convert.ToBase64String(SHA256.Create().ComputeHash(bytes));
-
-            // using (var stream = request.GetRequestStream())
-            // {
-            //     stream.Write(bytes, 0, bytes.Length);
-            // }
-
-            // signer.SignRequest(request);
-
-            // Console.WriteLine($"Authorization header: {request.Headers["authorization"]}");
-
-            // ExecuteRequest(request);
 
             Console.ReadKey();
         }
